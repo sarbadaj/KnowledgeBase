@@ -46,3 +46,11 @@ end
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 gem 'therubyracer', '~> 0.10.2'
+
+group :development, :test do
+	gem 'pry'
+  gem 'rspec-rails', '~> 3.0'
+  gem "factory_girl_rails"
+  gem "capybara"
+  gem 'selenium-webdriver'
+end

@@ -1,27 +1,33 @@
-<div class="navbar navbar-fixed-top">
-  <ul class="nav nav-tabs">
-    <li class="pull-left">
-      <h1>KNOWLEDGE BASE</h1>
-    </li>
-    <div class="pull-right">
-      <li>
-        <button type="button" class="btn btn-log btn-default"><%= link_to "Knowledge", new_knowledge_path, remote: true %></button>
-      </li>
-    </div>  
-  </ul>
-  <div id="new_knowledge">
-    
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <h1>Knowledge Base</h1>
+  <div class="pull-right" data-toggle="modal" data-target="#myModal">
+    <button class="btn btn-default">
+      Knowledge
+    </button>
   </div>
-  <div>
-    <% @knowledges.each do |knowledge| %>
-      <p>
-      <strong>
-        <%= knowledge.title %>
-      </strong>
-      </p>
-      <p>
-        <%= knowledge.body %>
-      </p>
-    <% end %>
+</div>
+<div class="container" >
+  <% @knowledges.each do |knowledge| %>
+    <p>
+    <strong>
+      <%= knowledge.title %>
+    </strong>
+    </p>
+    <p>
+      <%= knowledge.body %>
+    </p>
+  <% end %>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only"></span></button> 
+      </div>
+      <div class="modal-body">
+        <%= render "form"%>
+      </div>
+    </div>
   </div>
 </div>

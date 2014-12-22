@@ -4,7 +4,7 @@ class KnowledgesController < ApplicationController
   end
 
   def index
-    @knowledges = Knowledge.all
+    @knowledges = Knowledge.search(params[:search])
   end
 
   def create
